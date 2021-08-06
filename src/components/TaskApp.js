@@ -2,7 +2,7 @@ import React from 'react';
 import { TaskList } from './TaskList';
 import axios from 'axios';
 import './Tasks.css'
-import { Container } from 'react-bootstrap';
+import { Badge, Card, Container } from 'react-bootstrap';
 import { Grid } from '@material-ui/core';
 import { NewTask } from './NewTask';
  
@@ -77,7 +77,7 @@ export class TaskApp extends React.Component{
                 <Grid
                     container
                     direction="row"
-                    alignItems="center"
+                    
                 >
                     <Grid item xs={6}>
                         <Container>
@@ -87,14 +87,27 @@ export class TaskApp extends React.Component{
 
                     <Grid container direction="column"
                         justifyContent="space-between"
-                        spacing={3}
                         xs
                         >
                         <Grid item xs>
                             <NewTask handleChangeInfo={this.handleChangeInfo} handleSubmit={this.handleSubmit}/>
                         </Grid>
-                        <Grid item >
-                            Other
+                        <Grid item xs>
+                            <Card>
+                                <Card.Body>
+                                    <p>Define las tareas según la importancia con los siguientes items seguidos de la descripción.</p>
+                                    <div>
+                                    <span class="badge rounded-pill bg-primary">Primary</span>
+                                    <span class="badge rounded-pill bg-secondary">Secondary</span>
+                                    <span class="badge rounded-pill bg-success">Success</span>
+                                    <span class="badge rounded-pill bg-danger">Danger</span>
+                                    <span class="badge rounded-pill bg-warning text-dark">Warning</span>
+                                    <span class="badge rounded-pill bg-info text-dark">Info</span>
+                                    <span class="badge rounded-pill bg-light text-dark">Light</span>
+                                    <span class="badge rounded-pill bg-dark">Dark</span>
+                                    </div>
+                                </Card.Body>
+                            </Card>
                         </Grid>
                         
                     </Grid>
