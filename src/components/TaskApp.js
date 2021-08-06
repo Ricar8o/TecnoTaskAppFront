@@ -2,7 +2,7 @@ import React from 'react';
 import { TaskList } from './TaskList';
 import axios from 'axios';
 import './Tasks.css'
-import { Badge, Card, Container } from 'react-bootstrap';
+import { Card, Container } from 'react-bootstrap';
 import { Grid } from '@material-ui/core';
 import { NewTask } from './NewTask';
  
@@ -17,6 +17,7 @@ export class TaskApp extends React.Component{
 
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleChangeInfo = this.handleChangeInfo.bind(this);
+        this.handleDeleteTask = this.handleDeleteTask.bind(this);
     }
 
     componentDidMount() {
@@ -43,6 +44,32 @@ export class TaskApp extends React.Component{
 
     handleChangeInfo(e){
         this.setState({info: e.target.value}); 
+    }
+
+    handleDeleteTask(e){
+        this.axios.delete('tasks/'+e.target.id)
+        .then(response => response.data)
+        .then(data => {
+            console.log(data)
+        })
+        .catch(function (error) {
+            alert(error);
+        });
+
+        this.removeFromList(e.target.id);
+    }
+
+    removeFromList(id){
+        let lista = this.state.taskList;
+        for (let i = 0; i < lista.length; i++) {
+            let task = lista[i];
+            if (task.id === id){
+                lista.splice(i,1);
+                break;
+            }
+        }
+        this.setState({taskList: lista});
+
     }
 
     handleSubmit(event){
@@ -81,18 +108,18 @@ export class TaskApp extends React.Component{
                 >
                     <Grid item xs={6}>
                         <Container>
-                            <TaskList taskList={this.state.taskList}/>
+                            <TaskList taskList={this.state.taskList} handleDeleteTask={this.handleDeleteTask}/>
                         </Container>
                     </Grid>
 
-                    <Grid container direction="column"
-                        justifyContent="space-between"
+                    <Grid item container direction="column"
+                        justifyContent="flex-start"
                         xs
                         >
-                        <Grid item xs>
+                        <Grid item >
                             <NewTask handleChangeInfo={this.handleChangeInfo} handleSubmit={this.handleSubmit}/>
                         </Grid>
-                        <Grid item xs>
+                        <Grid item >
                             <div className="badgesContainer">
                             <Card>
                                 <Card.Body>

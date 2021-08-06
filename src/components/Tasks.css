@@ -24,3 +24,30 @@
     margin-bottom: 4%;
     margin-top: 7%;
 }
+
+.badgesContainer{
+    padding-top: 20%;
+}
+
+.buttonContainer{
+    float: right;
+    display:inline;
+   
+}
+
+.delete-button{
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
+    outline:none;
+    color: rgb(187, 25, 25);
+    font-size: 17px;
+}
+
+.new-task button{
+    margin-top: 5%;
+    display: inline;
+    float: left;
+}
