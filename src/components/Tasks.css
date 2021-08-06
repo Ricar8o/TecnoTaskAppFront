@@ -1,0 +1,18 @@
+.task-container{
+    padding-bottom: 3%;
+    margin-left: 2%;
+    margin-top: 5%;
+}
+
+.task-container h1{
+    color: white;
+}
+
+.taskItem{
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
