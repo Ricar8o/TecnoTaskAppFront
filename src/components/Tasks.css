@@ -16,6 +16,7 @@
 
 .alert {
   width: 85%;
+  text-align: left;
 }
 
 .new-task{
