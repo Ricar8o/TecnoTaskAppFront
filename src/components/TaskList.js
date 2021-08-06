@@ -6,11 +6,13 @@ export class TaskList extends React.Component{
     render(){
         const taskList = this.props.taskList.map((task, i) => {
             return (
-             
-                    <div id={task.id} class={`alert alert-${task.type}`}  role="alert">
-                        {task.description}
-                        {/* <Button class="btn" ></Button> */}
+                    <div className="taskItem">
+                        <div id={task.id} class={`alert alert-${task.type}`}  role="alert">
+                            {task.description}
+                            {/* <Button class="btn" ></Button> */}
+                        </div>
                     </div>
+                    
                 
             );
         });

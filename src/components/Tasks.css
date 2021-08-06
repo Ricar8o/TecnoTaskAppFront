@@ -6,13 +6,15 @@
 
 .task-container h1{
     color: white;
+    text-align: left;
+    padding-bottom: 5%;
 }
 
 .taskItem{
-    align-items: center;
-    display: flex;
-    justify-content: space-between;
+    font-size: small;
 }
+
+
 
 
 

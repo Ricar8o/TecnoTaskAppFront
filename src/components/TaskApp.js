@@ -3,6 +3,7 @@ import { TaskList } from './TaskList';
 import axios from 'axios';
 import './Tasks.css'
 import { Container } from 'react-bootstrap';
+import { Grid } from '@material-ui/core';
  
 export class TaskApp extends React.Component{
 
@@ -38,10 +39,24 @@ export class TaskApp extends React.Component{
     render(){
         return(
             <div >
-                <Container>
-                    <TaskList taskList={this.state.taskList}/>
-                </Container>
-                
+                <Grid
+                    container
+                    direction="row"
+                    justifyContent="flex-start"
+                    alignItems="center"
+                    spacing={3}
+                >
+                    <Grid item >
+                        <Container>
+                            <TaskList taskList={this.state.taskList}/>
+                        </Container>
+                    </Grid>
+
+                    <Grid item xs>
+                        Other
+                    </Grid>
+                    
+                </Grid>
             </div>
         );
     }
