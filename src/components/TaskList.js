@@ -1,3 +1,4 @@
+import { Icon, IconButton } from '@material-ui/core';
 import React from 'react';
 import { Button } from 'react-bootstrap';
 import { TrashFill } from 'react-bootstrap-icons';
@@ -11,9 +12,11 @@ export class TaskList extends React.Component{
                         <div class={`alert alert-${task.type}`}  role="alert">
                             {task.description}
                             <div className="buttonContainer">
-                                <button id={task.id}  className="delete-button" variant="primary" size="sm" onClick={this.props.handleDeleteTask}>
-                                    <TrashFill/>
-                                </button>
+                                <IconButton id={task.id}  class="delete-button" onClick={(e) => this.props.handleDeleteTask(e, task.id)}>
+                                    <TrashFill id={task.id}/>
+                                </IconButton >
+                                
+                
                             </div>
                             
                         </div>

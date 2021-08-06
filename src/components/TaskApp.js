@@ -46,8 +46,8 @@ export class TaskApp extends React.Component{
         this.setState({info: e.target.value}); 
     }
 
-    handleDeleteTask(e){
-        this.axios.delete('tasks/'+e.target.id)
+    handleDeleteTask(e,id){
+        this.axios.delete('tasks/'+id)
         .then(response => response.data)
         .then(data => {
             console.log(data)
@@ -56,7 +56,7 @@ export class TaskApp extends React.Component{
             alert(error);
         });
 
-        this.removeFromList(e.target.id);
+        this.removeFromList(id);
     }
 
     removeFromList(id){
@@ -119,6 +119,7 @@ export class TaskApp extends React.Component{
                         <Grid item >
                             <NewTask handleChangeInfo={this.handleChangeInfo} handleSubmit={this.handleSubmit}/>
                         </Grid>
+                        <div classname="arreglo">
                         <Grid item >
                             <div className="badgesContainer">
                             <Card>
@@ -138,6 +139,7 @@ export class TaskApp extends React.Component{
                             </Card>
                             </div>
                         </Grid>
+                        </div>
                         
                     </Grid>
                     

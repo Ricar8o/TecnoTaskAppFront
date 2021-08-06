@@ -9,6 +9,7 @@ export class NewTask extends React.Component{
                 <h2>Tarea</h2>
                 <Form >
                     <input onChange={this.props.handleChangeInfo} class="form-control" id="inputTask"  placeholder="Enter Task Info"/>
+                    <br/>
                     <Button type="submit" class="btn btn-primary ">Agregar</Button>
                  
                 </Form>

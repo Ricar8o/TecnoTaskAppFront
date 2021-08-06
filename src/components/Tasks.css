@@ -46,8 +46,12 @@
     font-size: 17px;
 }
 
-.new-task button{
+/* .new-task button{
     margin-top: 5%;
-    display: inline;
     float: left;
+} */
+
+
+.arreglo{
+    padding-top: 20%;
 }
