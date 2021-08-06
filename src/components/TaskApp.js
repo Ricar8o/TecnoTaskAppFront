@@ -93,6 +93,7 @@ export class TaskApp extends React.Component{
                             <NewTask handleChangeInfo={this.handleChangeInfo} handleSubmit={this.handleSubmit}/>
                         </Grid>
                         <Grid item xs>
+                            <div className="badgesContainer">
                             <Card>
                                 <Card.Body>
                                     <p>Define las tareas según la importancia con los siguientes items seguidos de la descripción.</p>
@@ -108,6 +109,7 @@ export class TaskApp extends React.Component{
                                     </div>
                                 </Card.Body>
                             </Card>
+                            </div>
                         </Grid>
                         
                     </Grid>
